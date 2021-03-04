@@ -1,6 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
-COPY /app /app
+COPY bin/Release/net5.0/publish/ /app
 ENV ASPNETCORE_URLS http://*:8000
 EXPOSE 8000
 ENTRYPOINT ["dotnet","spletnaSPIV.dll"]
