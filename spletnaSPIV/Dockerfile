@@ -1,46 +1,46 @@
-﻿# FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS build
-# This code will download and use the last ASP.NET 5 Docker
-
-# image based on Mono at
-
-# https://github.com/aspnet/aspnet-docker/blob/master/1.0.0-
-
-# rc1-update1/Dockerfile
-
-FROM Microsoft/aspnet:latest
-
-# This code copies the project into the folder and restores
-
-# the packages using dotnet CLICOPY . /app
-
+﻿  #FROM mcr.microsoft.com/dotnet/core/aspnet:5.0
+  #COPY bin/Release/net5.0/publish/ App/
+  #WORKDIR /App
+  #ENTRYPOINT ["dotnet", "spletnaSPIV.dll"]
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS build-env
 WORKDIR /app
 
-RUN [“dotnet”,”restore”]
+COPY *.csproj ./
+RUN dotnet restore
 
-# Open this port in the container
+COPY . ./
+RUN dotnet publish -c Release -o out
 
-EXPOSE 5001
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "spletnaSPIV.dll"]
 
-# Start application using DNX and the command from
-
-# project.json to call kestrel
-
-ENTRYPOINT [“dotnet”,”run”]
-
-Save and close Dockerfile.
-
-Then, verify the existing containers:
-
-$ sudo docker images
-
-We can also check the running containers:
-
-$ docker ps
-
-You can build your application now:
-
-$ docker build -t
-
-Run it (port 5001 is the default port for Kestrel):
-
-$ docker run-t -d -p 5001:5001
+## FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS build
+## This code will download and use the last ASP.NET 5 Docker
+#
+## image based on Mono at
+#
+## https://github.com/aspnet/aspnet-docker/blob/master/1.0.0-
+#
+## rc1-update1/Dockerfile
+#
+#FROM Microsoft/aspnet:latest
+#
+## This code copies the project into the folder and restores
+#
+## the packages using dotnet CLICOPY . /app
+#
+#WORKDIR /app
+#
+#RUN [“dotnet”,”restore”]
+#
+## Open this port in the container
+#
+#EXPOSE 5001
+#
+## Start application using DNX and the command from
+#
+## project.json to call kestrel
+#
+#ENTRYPOINT [“dotnet”,”run”]
