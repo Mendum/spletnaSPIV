@@ -1,32 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj": {}
+    "C:\\Users\\Bobby\\Desktop\\feri\\3Letnik\\spiv\\spletna\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj": {
+    "C:\\Users\\Bobby\\Desktop\\feri\\3Letnik\\spiv\\spletna\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj",
+        "projectUniqueName": "C:\\Users\\Bobby\\Desktop\\feri\\3Letnik\\spiv\\spletna\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj",
         "projectName": "spletnaSPIV",
-        "projectPath": "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj",
-        "packagesPath": "C:\\Users\\Andrej\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\obj\\",
+        "projectPath": "C:\\Users\\Bobby\\Desktop\\feri\\3Letnik\\spiv\\spletna\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj",
+        "packagesPath": "C:\\Users\\Bobby\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bobby\\Desktop\\feri\\3Letnik\\spiv\\spletna\\spletnaSPIV\\spletnaSPIV\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andrej\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bobby\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net50"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net50": {
             "projectReferences": {}
           }
         },
@@ -37,33 +40,23 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net50": {
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0-*, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
         }
       }
     }
