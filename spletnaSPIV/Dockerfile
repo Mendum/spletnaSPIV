@@ -17,6 +17,7 @@
 #COPY --from=build-env /app/out .
 #ENTRYPOINT ["dotnet", "spletnaSPIV.dll"]
 #-----------------------------------------------------------------------------------
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
 COPY bin/Release/net5.0/publish/ App/
 WORKDIR /App
 ENTRYPOINT ["dotnet", "spletnaSPIV.dll"]
