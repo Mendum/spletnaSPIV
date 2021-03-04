@@ -1,6 +1,6 @@
 # spletnaSPIV
 
-mssql --> ip:8002 SA_PASSWORD=StrongP@ssword
+mssql --> ip:8002 user= SA password= <YourStrong!Passw0rd>
 
 spletna --> ip:8000
 
