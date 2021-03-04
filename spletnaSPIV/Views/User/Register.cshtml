@@ -1,0 +1,41 @@
+﻿@model spletnaSPIV.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 class="text-center">Register</h1>
+<div class="row d-flex justify-content-center">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Ime, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Ime, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Ime, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Priimek, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Priimek, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Priimek, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Geslo, new { @class = "control-label" })
+                @Html.PasswordFor(m => m.Geslo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Geslo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
