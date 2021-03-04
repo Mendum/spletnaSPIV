@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj": {}
+    "C:\\Users\\Lars\\Source\\Repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj": {
+    "C:\\Users\\Lars\\Source\\Repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj",
+        "projectUniqueName": "C:\\Users\\Lars\\Source\\Repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj",
         "projectName": "spletnaSPIV",
-        "projectPath": "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj",
-        "packagesPath": "C:\\Users\\Andrej\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrej\\source\\repos\\spletnaSPIV\\spletnaSPIV\\obj\\",
+        "projectPath": "C:\\Users\\Lars\\Source\\Repos\\spletnaSPIV\\spletnaSPIV\\spletnaSPIV.csproj",
+        "packagesPath": "C:\\Users\\Lars\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lars\\Source\\Repos\\spletnaSPIV\\spletnaSPIV\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Andrej\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Lars\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -63,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
