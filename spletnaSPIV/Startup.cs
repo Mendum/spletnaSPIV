@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using spletnaSPIV.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,16 @@ namespace spletnaSPIV
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDistributedMemoryCache();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);//You can set Time   
+            });
+
+            services.AddMvc().AddViewLocalization();
+            services.AddLocalization(options => options.ResourcesPath = "Resource");
+            services.AddHttpContextAccessor();
+
+            services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +56,12 @@ namespace spletnaSPIV
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
+
+            app.UseRequestLocalization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -52,6 +69,8 @@ namespace spletnaSPIV
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseCookiePolicy();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model spletnaSPIV.Models.User
+﻿@model spletnaSPIV.Models.UserTbl
 
 @{
     ViewData["Title"] = "User";
@@ -19,16 +19,16 @@
             @Html.DisplayFor(model => model.Id)
         </dd>*@
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ime)
+            @Html.DisplayNameFor(model => model.FristName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ime)
+            @Html.DisplayFor(model => model.FristName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Priimek)
+            @Html.DisplayNameFor(model => model.LastName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Priimek)
+            @Html.DisplayFor(model => model.LastName)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Email)
@@ -37,10 +37,10 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Geslo)
+            @Html.DisplayNameFor(model => model.Password)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Geslo)
+            @Html.DisplayFor(model => model.Password)
         </dd>
        
     </dl>

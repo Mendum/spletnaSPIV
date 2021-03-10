@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using spletnaSPIV.Models;
 
 namespace spletnaSPIV.Controllers
 {
+    [AllowAnonymous]
     public class UserController : Controller
     {
         // GET: UserController
@@ -89,10 +96,43 @@ namespace spletnaSPIV.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Registracija(UserTbl user)
+        {
+            //var result = await userManager.CreateAsync(user, user.Password);
+
+            //if (result.Succeeded)
+            //{
+            //    await signInManager.SignInAsync(user, false);
+            //    return RedirectToAction("Index", "Home");
+            //}
+
+            return View();
+        }
+
         public ActionResult Login()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Login(UserTbl user)
+        {
+            if (user.Email == "a" && user.Password == "a")
+            {
+                HttpContext.Session.Set("user", user); 
+                return RedirectToAction("Index", "Home");
+            }
+            return View(user);
+        }
+
+        public  IActionResult Logout()
+        {
+            HttpContext.Session.Remove("user");
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult Profile()
         {
             return View();

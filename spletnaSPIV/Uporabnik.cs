@@ -8,17 +8,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Models;
-using System.Collections.Generic;
+using spletnaSPIV.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
 
 namespace spletnaSPIV
 {
-    public class UporabikContext : dbContext
+    public class UporabikContext //: DbContext
     {
-        public DbSet<UserTbl> Users { get; set; }
-        public DbSet<WalletTbl> Users { get; set; }
-        public DbSet<TransactionTbl> Users { get; set; }
+        //public DbSet<UserTbl> Users { get; set; }
+        //public DbSet<WalletTbl> Users { get; set; }
+        //public DbSet<TransactionTbl> Users { get; set; }
 
     }
 }
