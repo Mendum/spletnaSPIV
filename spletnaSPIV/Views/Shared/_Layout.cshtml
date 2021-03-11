@@ -27,9 +27,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Profile">Users</a>
                         </li>
-                        @using Microsoft.AspNetCore.Http;
+                        @*@using Microsoft.AspNetCore.Http;
                         @inject IHttpContextAccessor HttpContextAccessor
-                        @if (HttpContextAccessor.HttpContext.Session.Get<spletnaSPIV.Models.UserTbl>("user") == null)
+                        @if (HttpContextAccessor.HttpContext.Session.Get<spletnaSPIV.Models.User>("user") == null)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
@@ -43,7 +43,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
                             </li>
-                        }
+                        }*@
                     </ul>
                 </div>
 
