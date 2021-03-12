@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace spletnaSPIV.Models
 {
-    public class User : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
+        [Key]
+        public override string Id { get => base.Id; set => base.Id = value; }
         public string Password { get; set; }
         public ICollection<Wallet> Wallets { get; set; }
     }

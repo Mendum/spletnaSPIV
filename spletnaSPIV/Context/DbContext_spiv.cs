@@ -9,15 +9,14 @@ using System.Threading.Tasks;
 
 namespace spletnaSPIV.Context
 {
-    public class DbContext_spiv : IdentityDbContext<User>
+    public class DbContext_spiv : IdentityDbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<ApplicationUser> Users { get; set; }
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
 
-        public DbContext_spiv()
+        public DbContext_spiv(DbContextOptions<DbContext_spiv> options) : base(options)
         {
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,6 +27,9 @@ namespace spletnaSPIV.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>().ToTable("user");
+            modelBuilder.Entity<Wallet>().ToTable("wallet");
+            modelBuilder.Entity<Transaction>().ToTable("transaction");
         }
     }
 }

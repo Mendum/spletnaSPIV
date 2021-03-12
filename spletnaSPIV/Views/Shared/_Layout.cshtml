@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,26 +26,47 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Profile">Users</a>
-                        </li>
-                        @*@using Microsoft.AspNetCore.Http;
-                        @inject IHttpContextAccessor HttpContextAccessor
-                        @if (HttpContextAccessor.HttpContext.Session.Get<spletnaSPIV.Models.User>("user") == null)
+                        @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+                                <form method="post" asp-controller="Account" asp-action="logout">
+                                    <button type="submit" style="width:auto"
+                                            class="nav-link btn btn-link py-0">
+                                        Logout @User.Identity.Name
+                                    </button>
+                                </form>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                                <a class="nav-link" asp-controller="Account" asp-action="register">
+                                    Register
+                                </a>
                             </li>
-                        }*@
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Account" asp-action="login">
+                                    Login
+                                </a>
+                            </li>
+                        }
+                        @*@using Microsoft.AspNetCore.Http;
+        @inject IHttpContextAccessor HttpContextAccessor
+        @if (HttpContextAccessor.HttpContext.Session.Get<spletnaSPIV.Models.User>("user") == null)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+            </li>
+        }*@
                     </ul>
                 </div>
 

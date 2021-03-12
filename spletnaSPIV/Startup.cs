@@ -27,10 +27,16 @@ namespace spletnaSPIV
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DbContext_spiv>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("spivRemoteDB")));
-
+            //services.AddDbContext<DbContext_spiv>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("spivRemoteDB")));
+            services.AddDbContext<DbContext_spiv>(options => options.UseSqlServer(Configuration.GetConnectionString("spivRemoteDB")));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<DbContext_spiv>()
+                    .AddDefaultUI()
+                    .AddDefaultTokenProviders();
             services.AddControllersWithViews();
+            services.AddRazorPages();
+
             services.AddDistributedMemoryCache();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);//You can set Time   

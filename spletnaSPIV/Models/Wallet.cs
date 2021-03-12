@@ -15,6 +15,6 @@ namespace spletnaSPIV.Models
         public Currency Currency { get; set; }
 
 
-        public User User { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }
